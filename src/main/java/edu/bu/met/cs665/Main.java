@@ -1,38 +1,46 @@
 /**
- * Name: FIRST_NAME LAST_NAME
+ * Name: May Perriello
  * Course: CS-665 Software Designs & Patterns
- * Date: MM/DD/YYYY
+ * Date: 11/7/23
  * File Name: Main.java
- * Description: Write a description for this class
+ * Description: This is the client. Using the adaptor design pattern,
+ * this code implements the old system interface with the new system
+ * interface.
  */
 
 package edu.bu.met.cs665;
 
-import edu.bu.met.cs665.example1.Person;
+import edu.bu.met.cs665.assignment4.CustomerDataHttps;
+import edu.bu.met.cs665.assignment4.CustomerDataUsb;
+import edu.bu.met.cs665.assignment4.HttpAdaptee;
+import edu.bu.met.cs665.assignment4.HttpsToUsbAdapter;
+import edu.bu.met.cs665.assignment4.UsbAdaptee;
 
 /**
  * This is the Main class.
- */
+ **/
 public class Main {
 
   /**
-   * A main method to run examples.
-   * You may use this method for development purposes as you start building your
-   * assignments/final project.  This could prove convenient to test as you are developing.
-   * However, please note that every assignment/final projects requires JUnit tests.
-   */
+   * It first creates instances of both new and old systems and then an adapter instance.
+   **/
   public static void main(String[] args) {
-    System.out.println("This is a test message from the Main class (Main.java file)");
-  }
+    // Create instances of the USB-based and HTTPS-based customer data
+    CustomerDataUsb usbCustomer = new UsbAdaptee();
+    CustomerDataHttps httpsData = new HttpAdaptee();
 
-  /**
-   * This method performs XYZ and returns String.
-   *
-   * @return String
-   */
-  private String doIt() {
-    Person student = new Person("John", "Doe");
-    return student.getLastName() + ',' + student.getFirstName();
+    // Create an adapter instance that adapts the HTTPS-based customer data to the USB interface
+    CustomerDataUsb customerAdapter = new HttpsToUsbAdapter(httpsData);
+
+    // Use the USB-based customer data instance to print and retrieve customer data
+    usbCustomer.printCustomer(131);
+    usbCustomer.getCustomer_Usb(131);
+
+    // Use the adapter instance to print and retrieve
+    // customer data from the HTTPS-based customer data source
+    // also convert usb to https
+    customerAdapter.printCustomer(108);
+    customerAdapter.getCustomer_Usb(108);
   }
 
 }

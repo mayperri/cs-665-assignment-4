@@ -1,16 +1,18 @@
 
 | CS-665       | Software Design & Patterns |
 |--------------|----------------------------|
-| Name         | FIRST_NAME LAST_NAME       |
-| Date         | MM/DD/YYYY                 |
-| Course       | Fall / Spring / Summer     |
-| Assignment # |                            |
+| Name         | May Perriello              |
+| Date         | 1/7/2023                   |
+| Course       | Fall                       |
+| Assignment # | Assignment 4               |
 
 # Assignment Overview
-Please add a paragraph or two overviewing the objectives of the assignment.
+This assignment allows a company to access to systems for their customer data, a new system and an old system. This application allows te company to facilitate the integration of the old system's
+interface with the new system’s interface. 
+
 
 # GitHub Repository Link:
-https://github.com/{YOUR_USERNAME}/cs-665-assignment-{ASSIGNMENT_NUMBER}
+https://github.com/mayperri/cs-665-assignment-4
 
 # Implementation Description 
 
@@ -19,11 +21,15 @@ For each assignment, please answer the following:
 
 - Explain the level of flexibility in your implementation, including how new object types can
 be easily added or removed in the future.
+  - This code feels fairly flexible since you don't have to make the same updates in multiple places and could easily add a new adaptee in at any time. 
 - Discuss the simplicity and understandability of your implementation, ensuring that it is
 easy for others to read and maintain.
+  - Clear naming and identifying of classes and interfaces and methods allow a developer to folllow along with the code. The format is a simple adapter pattern and therefore also easy to understand. 
 - Describe how you have avoided duplicated code and why it is important.
+  - The adaptor pattern helps eliminate duplicated code since both systems are accessible through the adaptor class. 
 - If applicable, mention any design patterns you have used and explain why they were
 chosen.
+  - The Adaptor design pattern was used in this code. I thought this was the best one since I had to adapt an interface or existing class with multiple adaptee's.
 
 
 # Maven Commands
